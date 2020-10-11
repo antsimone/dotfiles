@@ -1,0 +1,12 @@
+#!/bin/sh
+
+volume () {
+    if [ $(pamixer --get-mute) = true ]; then 
+        v="-"
+    else
+        v="$(pamixer --get-volume)"
+    fi    
+    echo "VOL:$v"
+}
+
+volume

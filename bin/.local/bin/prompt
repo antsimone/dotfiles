@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+read -r -p "$1"$'\n> '

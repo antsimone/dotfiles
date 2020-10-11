@@ -1,0 +1,10 @@
+Dotfiles
+========
+
+stow(8)
+-------
+
++ --no-folding 
++ empty directories and .placeholder
+
+

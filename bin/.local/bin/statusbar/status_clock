@@ -1,0 +1,7 @@
+#!/bin/sh
+
+clock () { 
+    echo "$(date '+%m-%d %a %I:%M%p') "
+}
+
+clock

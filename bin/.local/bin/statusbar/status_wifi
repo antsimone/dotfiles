@@ -1,0 +1,13 @@
+#!/bin/sh
+
+wifi () {
+    case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in
+    	down) w="" ;;
+    	up) w="W"
+            #"$(awk '/^\s*w/ { print "W", int($3 * 100 / 70) " " }' /proc/net/wireless)" ;;
+    esac
+    #printf "%s%s" "$wifi" "$(sed "s/down/❎/;s/up//" /sys/class/net/e*/operstate 2>/dev/null)"
+    echo "$w"
+}
+
+wifi

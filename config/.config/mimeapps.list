@@ -1,0 +1,13 @@
+[Default Applications]
+text/x-csrc=vim.desktop;
+text/x-python=vim.desktop
+
+[Added Associations]
+text/x-csrc=vim.desktop;
+application/x-desktop=leafpad.desktop;
+text/x-python=vim.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+text/x-perl=vim.desktop;
+text/plain=vim.desktop;
+text/x-chdr=vim.desktop;
+application/x-compressed-tar=pcmanfm.desktop;

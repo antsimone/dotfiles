@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Shutdown dmenu
+#
+
+s=$(echo -e "[Cancel]\nLogout\nReboot\nSuspend\nShutdown\n" | dmenu -i -p "System shutdown")
+
+case $s in
+
+"Logout")   killall xinit;;
+"Reboot")   systemctl reboot;;
+"Suspend")  systemctl suspend;;
+"Shutdown") systemctl poweroff;;
+*);;
+
+esac
+
