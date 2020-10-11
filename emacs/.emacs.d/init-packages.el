@@ -2,14 +2,20 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ; list the packages
-(setq package-list '(evil evil-leader powerline-evil))
+(setq package-list
+      '(evil
+	evil-collection
+	evil-leader
+	powerline-evil
+	helm
+	))
 
 ; activate all the packages
 (package-initialize)
 
-; fetch the list of available packages  
-(unless package-archive-contents
-  (package-refresh-contents))
+;; fetch the list of available packages  
+;(unless package-archive-contents
+;  (package-refresh-contents))
 
 ; install the missing packages
 (dolist (package package-list)

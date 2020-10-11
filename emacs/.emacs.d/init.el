@@ -4,7 +4,11 @@
 (when (file-exists-p custom-file)
     (load-file custom-file))
 
+(setq evil-want-keybinding nil)
+(setq evil-want-integration t)
+
 (evil-mode t)
+(evil-collection-init)
 (powerline-evil-vim-theme)
 (powerline-evil-vim-color-theme)
 
@@ -21,5 +25,5 @@
 (setq auto-save-default nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'bubbleberry)
+;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+
