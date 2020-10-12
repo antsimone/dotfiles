@@ -18,6 +18,6 @@
 (setq auto-save-default nil)
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;(helm-mode t)
+;; (helm-mode t)
+(load-theme 'base16-black-metal-bathory)
 
-;(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
