@@ -16,8 +16,13 @@
 (setq display-line-numbers-type 'relative) 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq vc-follow-symblink t)
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(add-to-list 'auto-mode-alist '("\\.m\\'" . octave-mode))
 ;; (helm-mode t)
-(load-theme 'base16-black-metal-bathory)
+;;(load-theme 'base16-black-metal-bathory) 
+(load-theme 'modus-vivendi)
+(setq-default indent-tabs-mode nil)
+
 

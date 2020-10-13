@@ -8,6 +8,6 @@ alias rm="rm -ir"
 alias mkdir="mkdir -p"
 alias grep="grep --color=auto"
 # progs
-alias zat="zathura"
+alias z="zathura"
 alias rsync="rsync --progress"
 
