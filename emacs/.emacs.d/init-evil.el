@@ -4,6 +4,7 @@
 (evil-mode t)
 (setq evil-collection-setup-minibuffer t)
 (evil-collection-init)
+
 (evil-leader/set-leader ",")
 (evil-leader/set-key
   "w" 'save-buffer
