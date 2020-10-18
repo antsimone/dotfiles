@@ -39,13 +39,14 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(set-frame-font "monospace:pixelsize=12")
 (global-hl-line-mode t) 
 (global-display-line-numbers-mode) 
 (setq display-line-numbers-type 'relative) 
 (setq column-number-mode t)
 (display-time)
 (display-battery-mode)
+(add-to-list 'default-frame-alist '(font . "monospace:pixelsize=12"))
+(load-theme 'grandshell)
 
 ;; evil-mode
 (setq evil-want-keybinding nil)
@@ -78,9 +79,6 @@
 (setq doom-modeline-buffer-file-name-style 'auto)
 (setq doom-modeline-indent-info nil)
 
-;; theme
-(load-theme 'modus-vivendi)
-
 ;; tabs and spaces
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
@@ -103,4 +101,3 @@
 (setq vhdl-standard '(93 nil))
 (setq vhdl-upper-case-attributes t)
 (setq vhdl-upper-case-enum-values t)
-
