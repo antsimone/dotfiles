@@ -1,5 +1,27 @@
-(load "~/.emacs.d/pkg-config.el")
-(load "~/.emacs.d/evil-config.el")
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+;; list the packages
+(setq package-list
+      '(evil
+        evil-collection
+        evil-leader
+        doom-modeline
+        evil-terminal-cursor-changer
+        helm
+        ))
+
+;; activate all the packages
+(package-initialize)
+
+;; fetch the list of available packages  
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 ;; customize save
 (setq custom-file (concat user-emacs-directory "/custom.el"))
@@ -24,6 +46,24 @@
 (setq column-number-mode t)
 (display-time)
 (display-battery-mode)
+
+;; evil-mode
+(setq evil-want-keybinding nil)
+(setq evil-want-integration t)
+(global-evil-leader-mode)
+(evil-mode t)
+(setq evil-collection-setup-minibuffer t)
+(evil-collection-init)
+
+(evil-leader/set-leader ",")
+(evil-leader/set-key
+  "w" 'save-buffer
+  "e" 'find-file
+  "v" 'split-window-right
+  "s" 'split-window-below
+  "b" 'switch-to-buffer
+  "l" 'next-buffer
+  "h" 'previous-buffer)
 
 ;; modeline
 (require 'doom-modeline)
