@@ -13,12 +13,7 @@
   "s" 'split-window-below
   "b" 'switch-to-buffer
   "l" 'next-buffer
-  "h" 'previous-buffer
-  "k" 'kill-buffer)
+  "h" 'previous-buffer)
 
-;;(powerline-evil-vim-theme)
-;;(powerline-evil-vim-color-theme)
 
-(require 'doom-modeline)
-(doom-modeline-mode 1)
 

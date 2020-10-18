@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/aa/.dotfiles/emacs/.emacs.d'
+let g:netrw_dirhist_3='/home/aa/.emacs.d'
+let g:netrw_dirhist_2='/home/aa/.dotfiles/emacs/.emacs.d'
 let g:netrw_dirhist_1='/home/aa/.config'
 let g:netrw_dirhist_0='/home/aa/.dwm/.git'
 let g:netrw_dirhist_9='/home/aa/.dwm'
@@ -7,6 +10,3 @@ let g:netrw_dirhist_8='/home/aa/.dotfiles/config/.config/X11'
 let g:netrw_dirhist_7='/home/aa/.dotfiles/config/.config/X11/Xresources.d'
 let g:netrw_dirhist_6='/home/aa'
 let g:netrw_dirhist_5='/home/aa/.dwm'
-let g:netrw_dirhist_4='/home/aa/.st'
-let g:netrw_dirhist_3='/home/aa/.vim'
-let g:netrw_dirhist_2='/home/aa/.vim/autoload'

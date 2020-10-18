@@ -6,16 +6,17 @@
       '(evil
         evil-collection
         evil-leader
-        powerline-evil
+        doom-modeline
+        evil-terminal-cursor-changer
         helm
         ))
 
 ;; activate all the packages
 (package-initialize)
 
-;;;; fetch the list of available packages  
-;;(unless package-archive-contents
-;;  (package-refresh-contents))
+;; fetch the list of available packages  
+(unless package-archive-contents
+  (package-refresh-contents))
 
 ;; install the missing packages
 (dolist (package package-list)

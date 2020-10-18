@@ -1,6 +1,5 @@
 (load "~/.emacs.d/pkg-config.el")
 (load "~/.emacs.d/evil-config.el")
-(load "~/.emacs.d/doom-modeline-config.el")
 
 ;; customize save
 (setq custom-file (concat user-emacs-directory "/custom.el"))
@@ -26,12 +25,26 @@
 (display-time)
 (display-battery-mode)
 
+;; modeline
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+(setq doom-modeline-height 12)
+(setq doom-modeline-bar-width 6)
+(setq doom-modeline-window-width-limit fill-column)
+(setq doom-modeline-icon nil)
+(setq doom-modeline-unicode-fallback nil)
+(setq doom-modeline-minor-modes nil)
+(setq doom-modeline-buffer-encoding nil)
+(setq doom-modeline-buffer-file-name-style 'auto)
+(setq doom-modeline-indent-info nil)
+
 ;; theme
 (load-theme 'modus-vivendi)
 
 ;; tabs and spaces
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
+(highlight-indentation-mode t)
 
 ;; backups, symlink and prompt
 (setq make-backup-files nil)
