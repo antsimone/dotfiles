@@ -16,5 +16,9 @@
   "h" 'previous-buffer
   "k" 'kill-buffer)
 
-(powerline-evil-vim-theme)
-(powerline-evil-vim-color-theme)
+;;(powerline-evil-vim-theme)
+;;(powerline-evil-vim-color-theme)
+
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+

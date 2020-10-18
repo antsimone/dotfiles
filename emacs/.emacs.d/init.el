@@ -1,5 +1,6 @@
-(load "~/.emacs.d/init-pkg")
-(load "~/.emacs.d/init-evil")
+(load "~/.emacs.d/pkg-config.el")
+(load "~/.emacs.d/evil-config.el")
+(load "~/.emacs.d/doom-modeline-config.el")
 
 ;; customize save
 (setq custom-file (concat user-emacs-directory "/custom.el"))
@@ -21,6 +22,9 @@
 (global-hl-line-mode t) 
 (global-display-line-numbers-mode) 
 (setq display-line-numbers-type 'relative) 
+(setq column-number-mode t)
+(display-time)
+(display-battery-mode)
 
 ;; theme
 (load-theme 'modus-vivendi)
