@@ -63,6 +63,7 @@
   "v" 'split-window-right
   "s" 'split-window-below
   "b" 'switch-to-buffer
+  "k" 'kill-buffer
   "l" 'next-buffer
   "h" 'previous-buffer)
 
