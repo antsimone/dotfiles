@@ -8,8 +8,8 @@
         evil-leader
         doom-modeline
         evil-terminal-cursor-changer
-        helm
-        ))
+        visual-fill-column
+        helm))
 
 ;; activate all the packages
 (package-initialize)
@@ -43,11 +43,11 @@
 (global-display-line-numbers-mode) 
 (setq display-line-numbers-type 'relative) 
 (setq column-number-mode t)
+(global-visual-fill-column-mode)
 (display-time)
 (display-battery-mode)
 (add-to-list 'default-frame-alist '(font . "monospace:pixelsize=12"))
 (load-theme 'grandshell)
-
 ;; evil-mode
 (setq evil-want-keybinding nil)
 (setq evil-want-integration t)
