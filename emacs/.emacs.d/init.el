@@ -9,6 +9,7 @@
         doom-modeline
         evil-terminal-cursor-changer
         visual-fill-column
+        vterm
         helm))
 
 ;; activate all the packages
