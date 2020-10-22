@@ -1,5 +1,6 @@
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
 
 ;; list the packages
 (setq package-list
@@ -8,6 +9,7 @@
         evil-leader
         doom-modeline
         evil-terminal-cursor-changer
+        highlight-indentation 
         visual-fill-column
         vterm
         helm))
@@ -32,9 +34,12 @@
 ;; don't show startup buffer
 (setq inhibit-startup-message t)
 
-;; cycle through buffers whose name does not start with an asterisk
-(set-frame-parameter (selected-frame) 'buffer-predicate
-                     (lambda (buf) (not (string-match-p "^*" (buffer-name buf)))))
+;; cycle through buffers whose name does not start with
+;; an asterisk
+(set-frame-parameter
+ (selected-frame) 'buffer-predicate
+ (lambda (buf)
+   (not (string-match-p "^*" (buffer-name buf)))))
 
 ;; appearance
 (scroll-bar-mode -1)
@@ -47,7 +52,8 @@
 (global-visual-fill-column-mode)
 (display-time)
 (display-battery-mode)
-(add-to-list 'default-frame-alist '(font . "monospace:pixelsize=12"))
+(add-to-list
+ 'default-frame-alist '(font . "monospace:pixelsize=12"))
 (load-theme 'grandshell)
 ;; evil-mode
 (setq evil-want-keybinding nil)
@@ -103,3 +109,6 @@
 (setq vhdl-standard '(93 nil))
 (setq vhdl-upper-case-attributes t)
 (setq vhdl-upper-case-enum-values t)
+
+(add-hook 'vterm-mode-hook
+          (lambda () (display-line-numbers-mode -1)))
