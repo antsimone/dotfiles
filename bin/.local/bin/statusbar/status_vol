@@ -1,5 +1,4 @@
 #!/bin/sh
-
 volume () {
     if [ $(pamixer --get-mute) = true ]; then 
         v="-"
