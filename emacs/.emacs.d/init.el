@@ -49,7 +49,7 @@
 (global-display-line-numbers-mode) 
 (setq display-line-numbers-type 'relative) 
 (setq column-number-mode t)
-(global-visual-fill-column-mode)
+;;(global-visual-fill-column-mode)
 (display-time)
 (display-battery-mode)
 (add-to-list
