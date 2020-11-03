@@ -34,12 +34,12 @@
 ;; don't show startup buffer
 (setq inhibit-startup-message t)
 
-;; cycle through buffers whose name does not start with
-;; an asterisk
-(set-frame-parameter
- (selected-frame) 'buffer-predicate
- (lambda (buf)
-   (not (string-match-p "^*" (buffer-name buf)))))
+;; cycle through buffers whose name does not start with an asterisk
+;; default-frame-alist fix emacsclient
+(add-to-list
+ 'default-frame-alist
+ '(buffer-predicate . (lambda (buf)
+                        (not (string-match-p "^*" (buffer-name buf))))))
 
 ;; appearance
 (scroll-bar-mode -1)
