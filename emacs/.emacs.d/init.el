@@ -54,7 +54,7 @@
 (display-battery-mode)
 (add-to-list
  'default-frame-alist '(font . "monospace:pixelsize=12"))
-(load-theme 'grandshell)
+(load-theme 'modus-operandi)
 ;; evil-mode
 (setq evil-want-keybinding nil)
 (setq evil-want-integration t)
@@ -62,7 +62,6 @@
 (evil-mode t)
 (setq evil-collection-setup-minibuffer t)
 (evil-collection-init)
-
 (evil-leader/set-leader ",")
 (evil-leader/set-key
   "w" 'save-buffer
@@ -90,7 +89,6 @@
 ;; tabs and spaces
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
-(highlight-indentation-mode t)
 
 ;; backups, symlink and prompt
 (setq make-backup-files nil)
@@ -131,3 +129,10 @@
 ;; hook
 (add-hook 'vterm-mode-hook
           (lambda () (display-line-numbers-mode -1)))
+(add-hook 'python-mode-hook
+          (lambda () (highlight-indentation-mode t)))
+
+;; (dolist (hook '( *-mode-hook ...
+;;                 ))
+;;   (add-hook hook
+;;             (lambda () ( )))
