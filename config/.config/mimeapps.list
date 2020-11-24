@@ -12,3 +12,4 @@ text/plain=emacs.desktop;
 text/x-chdr=emacs.desktop;
 application/x-compressed-tar=pcmanfm.desktop;
 application/postscript=org.pwmt.zathura.desktop;
+image/svg+xml=sxiv.desktop;

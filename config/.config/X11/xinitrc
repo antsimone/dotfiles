@@ -23,3 +23,5 @@ setxkbmap -option caps:swapescape
 nitrogen --restore &
 dwmblocks &
 dwm_run 
+
+alsactl restore 
