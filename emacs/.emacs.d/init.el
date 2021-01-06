@@ -54,7 +54,7 @@
 (display-battery-mode)
 (add-to-list
  'default-frame-alist '(font . "monospace:pixelsize=12"))
-(load-theme 'modus-operandi)
+(load-theme 'purp)
 ;; evil-mode
 (setq evil-want-keybinding nil)
 (setq evil-want-integration t)
