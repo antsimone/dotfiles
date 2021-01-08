@@ -4,8 +4,13 @@
 
 [[ $- != *i* ]] && return
 
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1/'
+
+}
+
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    PS1='\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\033[01;34m\]\w\[\033[00m\]\[\033[0;32m\]$(parse_git_branch)\[\033[00m\]\$ '
 else
     PS1='[\u@\h \W]\$ '
 fi
