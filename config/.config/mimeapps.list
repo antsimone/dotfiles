@@ -1,6 +1,7 @@
 [Default Applications]
 text/x-csrc=emacs.desktop;
 text/x-python=emacs.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-RHDUW0.desktop
 
 [Added Associations]
 text/x-csrc=emacs.desktop;
@@ -13,3 +14,4 @@ text/x-chdr=emacs.desktop;
 application/x-compressed-tar=pcmanfm.desktop;
 application/postscript=org.pwmt.zathura.desktop;
 image/svg+xml=sxiv.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-RHDUW0.desktop;
