@@ -3,103 +3,8 @@
 " set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
 " let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 " let $MYVIMRC="$HOME/.vim/vimrc"
-" Sets how many lines of history VIM has to remember
 
-set history=50
-
-" Enable filetype plugins
-filetype plugin on
-filetype indent on
-
-" Set to auto read when a file is changed from the outside
-set autoread
-au FocusGained,BufEnter * checktime
-
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-
-let mapleader = ","
-" Fast saving
-nmap <leader>w :w!<cr>
-" :W sudo saves the file 
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
-
-" Lines
-set number
-set rnu
-set so=7
-
-set wildmenu
-
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
-
-"Always show current position
-set ruler
-" Height of the command bar
-set cmdheight=2
-
-" A buffer becomes hidden when it is abandoned
-set hid
-
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
-
-" Ignore case when searching
-set ignorecase
-" Switch to case sensitive if searching with cap
-set smartcase
-" Highlight search results
-set hlsearch
-" Makes search act like search in modern browsers
-set incsearch 
-" Don't redraw while executing macros (good performance config)
-set lazyredraw 
-" For regular expressions turn magic on
-set magic
-" Show matching brackets when text indicator is over them
-set showmatch 
-
-" How many tenths of a second to blink when matching brackets
-set mat=4
-
-" No annoying sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
-
-" Vim-plug
-call plug#begin('~/.vim/plugged')
-Plug 'gruvbox-community/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/vim-easy-align'
-
-call plug#end()
-
-" Theme
 syntax enable 
-set t_Co=256
-colorscheme gruvbox
-set background=dark
-hi Normal ctermbg=none
-"let g:gruvbox_contrast_dark = "hard"
-
-" Vim-airline custom
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#vimagit#enabled = 1
-let g:airline_theme='gruvbox'
-"let g:airline_theme='violet'
-
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
 
 " Turn viminf off
 set viminfo="NONE"
@@ -119,6 +24,98 @@ set tw=79
 set ai 
 set si 
 set wrap
+
+" Sets how many lines of history VIM has to remember
+set history=50
+
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
+" Set to auto read when a file is changed from the outside
+set autoread
+au FocusGained,BufEnter * checktime
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+
+" Fast saving
+nmap <leader>w :w!<cr>
+" :W sudo saves the file 
+command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
+
+" Lines
+set number
+set rnu
+set so=7
+set wildmenu
+
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+    set wildignore+=.git\*,.hg\*,.svn\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
+
+"Always show current position
+set ruler
+" Height of the command bar
+set cmdheight=2
+
+" A buffer becomes hidden when it is abandoned
+set hid
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+" Ignore case when searching
+set ignorecase
+" Switch to case sensitive if searching with cap
+" Highlight search results
+set hlsearch
+set smartcase
+" Makes search act like search in modern browsers
+set incsearch 
+" Don't redraw while executing macros (good performance config)
+set lazyredraw 
+" For regular expressions turn magic on
+set magic
+" Show matching brackets when text indicator is over them
+set showmatch 
+" How many tenths of a second to blink when matching brackets
+set mat=4
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'gruvbox-community/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/vim-easy-align'
+
+call plug#end()
+
+" Theme
+colorscheme gruvbox
+"let g:gruvbox_contrast_dark = "hard"
+
+set t_Co=256
+set background=dark
+hi Normal ctermbg=none
+
+" Vim-airline custom
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#vimagit#enabled = 1
+let g:airline_theme='gruvbox'
+"let g:airline_theme='violet'
+
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
 
 " Visual mode pressing * or # searches for the current selection
 " Super useful! From an idea by Michael Naumann
@@ -184,20 +181,21 @@ nmap <S-k> mz:m-2<cr>`z
 vmap <S-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <S-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
+
 " Delete trailing white space on save, useful for some filetypes ;)
-fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-
-endfun
-
-if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-
-endif
+autocmd BufWritePre * :%s/\s+$//e
+"fun! CleanExtraSpaces()
+"    let save_cursor = getpos(".")
+"    let old_query = getreg('/')
+"    silent! %s/\s\+$//e
+"    call setpos('.', save_cursor)
+"    call setreg('/', old_query)
+"
+"endfun
+"if has("autocmd")
+"    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+"
+"endif
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)

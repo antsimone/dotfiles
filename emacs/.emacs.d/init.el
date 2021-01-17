@@ -54,7 +54,8 @@
 (display-battery-mode)
 (add-to-list
  'default-frame-alist '(font . "monospace:pixelsize=12"))
-(load-theme 'purp)
+(load-theme 'base16-black-metal-bathory)
+
 ;; evil-mode
 (setq evil-want-keybinding nil)
 (setq evil-want-integration t)
