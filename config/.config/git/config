@@ -2,7 +2,7 @@
     name = Antonio Simone
     email = antsimone03@gmail.com
 [core]
-    editor = emacs
+    editor = vim
 [color]
     ui = auto
 [alias]
