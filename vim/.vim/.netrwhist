@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/aa/desktop/os/Labs/Exams/07-18'
 let g:netrw_dirhist_9='/home/aa/desktop/os/Exams/18sep'
 let g:netrw_dirhist_8='/home/aa/desktop/os/Labs/Lab9/x1'
 let g:netrw_dirhist_7='/home/aa/desktop/os/Labs/Lab9/x3'
