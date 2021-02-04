@@ -4,7 +4,7 @@
 " let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 " let $MYVIMRC="$HOME/.vim/vimrc"
 
-syntax enable 
+syntax enable
 
 filetype plugin on
 filetype indent on
@@ -35,8 +35,8 @@ set shiftwidth=4
 set tabstop=4
 set lbr
 set tw=79
-set ai 
-set si 
+set ai
+set si
 set wrap
 
 " With a map leader it's possible to do extra key combinations
@@ -57,11 +57,11 @@ set whichwrap+=<,>,h,l
 set ignorecase
 set smartcase
 set hlsearch
-set incsearch 
+set incsearch
 
-set lazyredraw 
+set lazyredraw
 set magic
-set showmatch 
+set showmatch
 set mat=4
 
 set noerrorbells
@@ -75,6 +75,10 @@ colorscheme gruvbox
 
 let g:gruvbox_contrast_dark = "hard"
 let g:airline_theme='gruvbox'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 set background=dark
 hi Normal ctermbg=none
@@ -115,8 +119,8 @@ map <leader>h :bprevious<cr>
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
-map <leader>t<leader> :tabnext 
+map <leader>tm :tabmove
+map <leader>t<leader> :tabnext
 
 " Opens a new tab with the current buffer's path
 map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
