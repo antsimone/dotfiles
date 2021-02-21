@@ -29,15 +29,17 @@ set noswapfile
 set hid
 set history=50
 
+
 set expandtab
 set smarttab
 set shiftwidth=4
 set tabstop=4
 set lbr
-set tw=79
 set ai
 set si
 set wrap
+set tw=100
+set cc=-2
 
 " With a map leader it's possible to do extra key combinations
 let mapleader = ","
@@ -71,16 +73,17 @@ set tm=500
 set t_vb=
 
 set t_Co=256
-colorscheme gruvbox
+set background=dark
 
-let g:gruvbox_contrast_dark = "hard"
-let g:airline_theme='gruvbox'
+colorscheme ron
+let g:airline_theme='base16_isotope'
+
+"let g:airline_theme='base16_gruvbox_dark_hard'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-set background=dark
 hi Normal ctermbg=none
 
 map <space> /
