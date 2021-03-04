@@ -1,7 +1,7 @@
 #!/bin/sh
 
-clock () { 
-    echo "$(date '+%m-%d %a %I:%M%p')"
+clock () {
+    echo "$(date '+%b %d %a %I:%M%p')"
 }
 
 clock

@@ -9,7 +9,7 @@
         evil-leader
         doom-modeline
         evil-terminal-cursor-changer
-        highlight-indentation 
+        highlight-indentation
         visual-fill-column
         vterm
         helm))
@@ -17,7 +17,7 @@
 ;; activate all the packages
 (package-initialize)
 
-;; fetch the list of available packages  
+;; fetch the list of available packages
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -45,16 +45,15 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(global-hl-line-mode t) 
-(global-display-line-numbers-mode) 
-(setq display-line-numbers-type 'relative) 
+(global-hl-line-mode t)
+(global-display-line-numbers-mode)
+(setq display-line-numbers-type 'relative)
 (setq column-number-mode t)
 ;;(global-visual-fill-column-mode)
 (display-time)
 (display-battery-mode)
 (add-to-list
  'default-frame-alist '(font . "monospace:pixelsize=12"))
-(load-theme 'base16-black-metal-bathory)
 
 ;; evil-mode
 (setq evil-want-keybinding nil)

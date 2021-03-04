@@ -175,3 +175,4 @@ function! <SID>BufcloseCloseIt()
     endif
 
 endfunction
+
