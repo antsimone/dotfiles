@@ -21,9 +21,12 @@ setxkbmap -layout it
 setxkbmap -option caps:swapescape
 
 xautolock -time 30 -locker "systemctl suspend" -detectsleep &
+
 alsactl restore
-
 nitrogen --restore
-dwmblocks &
-dwm_run
 
+dwmblocks &
+while : ; do
+    dwm >/dev/null 2>&1
+
+done

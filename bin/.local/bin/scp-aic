@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+scp -r -P 10033 "$1" antonio.simone@led-x3850-2.polito.it:"$2"

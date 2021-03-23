@@ -1,0 +1,18 @@
+#!/bin/sh
+
+bat () {
+
+    ac=$(cat /sys/class/power_supply/AC/online)
+    cap=$(cat /sys/class/power_supply/BAT0/capacity)
+
+    if [ "$ac" -eq 1 ]; then
+        p="+"
+    else
+        p="-"
+    fi
+
+    echo -e "BAT:$cap$p"
+
+}
+
+bat
