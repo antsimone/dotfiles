@@ -1,7 +1,7 @@
 #!/bin/sh
 
 clk () {
-    echo "$(date '+%b %d %a %I:%M%p')"
+    echo "$(date '+%a %d %b %I:%M%p')"
 }
 
 clk

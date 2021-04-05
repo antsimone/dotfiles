@@ -1,1 +1,0 @@
-xrdb -I"$XDG_CONFIG_HOME/X11/Xresources.d" -merge ~/.config/X11/Xresources

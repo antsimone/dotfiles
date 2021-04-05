@@ -1,9 +1,3 @@
-" " XDG base dir spec
-" set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
-" set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME
-" let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
-" let $MYVIMRC="$HOME/.vim/vimrc"
-
 syntax enable
 
 filetype plugin on
@@ -14,11 +8,10 @@ set autoread
 au FocusGained,BufEnter * checktime
 
 call plug#begin('~/.vim/plugged')
-Plug 'gruvbox-community/gruvbox'
+Plug 'voldikss/vim-floaterm'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/vim-easy-align'
-
 call plug#end()
 
 set viminfo="NONE"
