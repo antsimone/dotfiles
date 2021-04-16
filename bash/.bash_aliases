@@ -10,7 +10,7 @@ alias grep="grep --color=auto"
 
 # others
 alias z="zathura"
+alias vi="vim"
 alias rsync="rsync --progress"
 alias verible-format="verible-verilog-format --inplace --port_declarations_alignment align --"
 alias verible-lint="verible-verilog-lint --"
-

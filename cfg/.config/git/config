@@ -2,12 +2,12 @@
     name = Antonio Simone
     email = antsimone03@gmail.com
 [core]
-    editor = vim
+    editor = emacsclient -c
 [color]
     ui = auto
 [alias]
     s = status
-    c = commit -m 
-    ca = commit -a -m 
+    c = commit -m
+    ca = commit -a -m
     graph = log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim white)(%aN, %ar)'
-    
+

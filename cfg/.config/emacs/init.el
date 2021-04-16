@@ -11,8 +11,7 @@
         evil-terminal-cursor-changer
         highlight-indentation
         visual-fill-column
-        vterm
-        helm))
+        vterm))
 
 ;; activate all the packages
 (package-initialize)
@@ -45,15 +44,36 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(global-hl-line-mode t)
+
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 (setq column-number-mode t)
-;;(global-visual-fill-column-mode)
+
 (display-time)
 (display-battery-mode)
+
+;;(global-visual-fill-column-mode)
+;;(global-hl-line-mode t)
+;;(set-face-background 'hl-line "#2b2b2b") ; 
+(set-face-attribute 'region nil :background "#ffffff" :foreground "#000000")
+
+;; fonts for emacsclient
 (add-to-list
- 'default-frame-alist '(font . "monospace:pixelsize=12"))
+ 'default-frame-alist '(font . "monospace:size=12"))
+
+;; vterm scheme
+(custom-set-faces
+ '(term-color-black ((t (:foreground "#2a1d17" :background "#4f362b"))))
+ '(term-color-red ((t (:foreground "#da1657" :background "#da4375"))))
+ '(term-color-green ((t (:foreground "#3ea250" :background "#6cb87a"))))
+ '(term-color-yellow ((t (:foreground "#e3d33d" :background "#e3da84"))))
+ '(term-color-blue ((t (:foreground "#3ea290" :background "#8ca8a3"))))
+ '(term-color-magenta ((t (:foreground "#ff850d" :background "#ffa64f"))))
+ '(term-color-cyan ((t (:foreground "#8c16da" :background "#a167c7"))))
+ '(term-color-white ((t (:foreground "#e9e9e9" :background "#fdfdfd"))))
+ '(term-default-fg-color ((t (:inherit term-color-white))))
+ '(term-default-bg-color ((t (:inherit term-color-black))))
+ )
 
 ;; evil-mode
 (setq evil-want-keybinding nil)
@@ -74,17 +94,9 @@
   "h" 'previous-buffer)
 
 ;; modeline
-(require 'doom-modeline)
-(doom-modeline-mode 1)
-(setq doom-modeline-height 12)
-(setq doom-modeline-bar-width 6)
-(setq doom-modeline-window-width-limit fill-column)
-(setq doom-modeline-icon nil)
-(setq doom-modeline-unicode-fallback nil)
-(setq doom-modeline-minor-modes nil)
-(setq doom-modeline-buffer-encoding nil)
-(setq doom-modeline-buffer-file-name-style 'auto)
-(setq doom-modeline-indent-info nil)
+(require 'powerline-evil)
+(powerline-evil-vim-theme)
+(powerline-evil-vim-color-theme)
 
 ;; tabs and spaces
 (setq-default tab-width 4)
@@ -109,30 +121,30 @@
       vhdl-upper-case-enum-values t
       )
 
-;;; verilog mode
-; (setq verilog-indent-level             4
-;       verilog-indent-level-module      4
-;       verilog-indent-level-declaration 4
-;       verilog-indent-level-behavioral  4
-;       verilog-indent-level-directive   1
-;       verilog-case-indent              2
-;       verilog-auto-newline             t
-;       verilog-auto-indent-on-newline   t
-;       verilog-tab-always-indent        t
-;       verilog-auto-endcomments         t
-;       verilog-minimum-comment-distance 40
-;       verilog-indent-begin-after-if    t
-;       verilog-auto-lineup              'declarations
-;       verilog-linter                   "my_lint_shell_command"
-;       )
+;; verilog mode
+(setq verilog-indent-level             4
+      verilog-indent-level-module      4
+      verilog-indent-level-declaration 4
+      verilog-indent-level-behavioral  4
+      verilog-indent-level-directive   1
+      verilog-case-indent              2
+      verilog-auto-newline             t
+      verilog-auto-indent-on-newline   t
+      verilog-tab-always-indent        t
+      verilog-auto-endcomments         t
+      verilog-minimum-comment-distance 40
+      verilog-indent-begin-after-if    t
+      verilog-auto-lineup              'declarations
+      verilog-linter                   "verible-verilog-lint --"
+      )
 
 ;; hook
 (add-hook 'vterm-mode-hook
           (lambda () (display-line-numbers-mode -1)))
 (add-hook 'python-mode-hook
           (lambda () (highlight-indentation-mode t)))
-
 ;; (dolist (hook '( *-mode-hook ...
 ;;                 ))
 ;;   (add-hook hook
 ;;             (lambda () ( )))
+
