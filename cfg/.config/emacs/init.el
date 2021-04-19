@@ -54,26 +54,26 @@
 
 ;;(global-visual-fill-column-mode)
 ;;(global-hl-line-mode t)
-;;(set-face-background 'hl-line "#2b2b2b") ; 
+;;(set-face-background 'hl-line "#2b2b2b") ;
 (set-face-attribute 'region nil :background "#ffffff" :foreground "#000000")
 
 ;; fonts for emacsclient
 (add-to-list
  'default-frame-alist '(font . "monospace:size=12"))
 
-;; vterm scheme
-(custom-set-faces
- '(term-color-black ((t (:foreground "#2a1d17" :background "#4f362b"))))
- '(term-color-red ((t (:foreground "#da1657" :background "#da4375"))))
- '(term-color-green ((t (:foreground "#3ea250" :background "#6cb87a"))))
- '(term-color-yellow ((t (:foreground "#e3d33d" :background "#e3da84"))))
- '(term-color-blue ((t (:foreground "#3ea290" :background "#8ca8a3"))))
- '(term-color-magenta ((t (:foreground "#ff850d" :background "#ffa64f"))))
- '(term-color-cyan ((t (:foreground "#8c16da" :background "#a167c7"))))
- '(term-color-white ((t (:foreground "#e9e9e9" :background "#fdfdfd"))))
- '(term-default-fg-color ((t (:inherit term-color-white))))
- '(term-default-bg-color ((t (:inherit term-color-black))))
- )
+;; ;; vterm scheme
+;; (custom-set-faces
+;;  '(term-color-black ((t (:foreground "#2a1d17" :background "#4f362b"))))
+;;  '(term-color-red ((t (:foreground "#da1657" :background "#da4375"))))
+;;  '(term-color-green ((t (:foreground "#3ea250" :background "#6cb87a"))))
+;;  '(term-color-yellow ((t (:foreground "#e3d33d" :background "#e3da84"))))
+;;  '(term-color-blue ((t (:foreground "#3ea290" :background "#8ca8a3"))))
+;;  '(term-color-magenta ((t (:foreground "#ff850d" :background "#ffa64f"))))
+;;  '(term-color-cyan ((t (:foreground "#8c16da" :background "#a167c7"))))
+;;  '(term-color-white ((t (:foreground "#e9e9e9" :background "#fdfdfd"))))
+;;  '(term-default-fg-color ((t (:inherit term-color-white))))
+;;  '(term-default-bg-color ((t (:inherit term-color-black))))
+;;  )
 
 ;; evil-mode
 (setq evil-want-keybinding nil)
@@ -92,6 +92,7 @@
   "k" 'kill-buffer
   "l" 'next-buffer
   "h" 'previous-buffer)
+(setq evil-want-fine-undo 'fine)
 
 ;; modeline
 (require 'powerline-evil)
@@ -113,30 +114,29 @@
  'auto-mode-alist
  '("\\.m$" . octave-mode))
 
-;; vhdl-mode
+;; vhdl mode
 (setq user-full-name "Antonio Simone"
       vhdl-basic-offset 4
       vhdl-standard '(93 nil)
       vhdl-upper-case-attributes t
-      vhdl-upper-case-enum-values t
-      )
+      vhdl-upper-case-enum-values t)
 
-;; verilog mode
-(setq verilog-indent-level             4
-      verilog-indent-level-module      4
+;; customization for Verilog mode
+(setq verilog-indent-level 4
+      verilog-indent-level-module 4
       verilog-indent-level-declaration 4
-      verilog-indent-level-behavioral  4
-      verilog-indent-level-directive   1
-      verilog-case-indent              2
-      verilog-auto-newline             t
-      verilog-auto-indent-on-newline   t
-      verilog-tab-always-indent        t
-      verilog-auto-endcomments         t
+      verilog-indent-level-behavioral 4
+      verilog-indent-level-directive 1
+      verilog-case-indent 2
+      verilog-auto-newline t
+      verilog-auto-indent-on-newline t
+      verilog-tab-always-indent t
+      verilog-auto-endcomments t
+      verilog-highlight-grouping-keywords t
+      verilog-highlight-modules t
       verilog-minimum-comment-distance 40
-      verilog-indent-begin-after-if    t
-      verilog-auto-lineup              'declarations
-      verilog-linter                   "verible-verilog-lint --"
-      )
+      verilog-indent-begin-after-if t
+      verilog-auto-lineup '(all))
 
 ;; hook
 (add-hook 'vterm-mode-hook

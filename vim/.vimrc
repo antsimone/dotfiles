@@ -8,9 +8,7 @@ set autoread
 au FocusGained,BufEnter * checktime
 
 call plug#begin('~/.vim/plugged')
-Plug 'voldikss/vim-floaterm'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/vim-easy-align'
 call plug#end()
 
@@ -21,7 +19,6 @@ set noswapfile
 
 set hid
 set history=50
-
 
 set expandtab
 set smarttab
@@ -46,7 +43,7 @@ set so=7
 set wildmenu
 
 set ruler
-set cmdheight=2
+set cmdheight=1
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 set ignorecase
@@ -68,16 +65,15 @@ set t_vb=
 set t_Co=256
 set background=dark
 
-colorscheme ron
-let g:airline_theme='base16_isotope'
-
-"let g:airline_theme='base16_gruvbox_dark_hard'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 hi Normal ctermbg=none
+hi Visual ctermbg=white ctermfg=black
+hi Search ctermbg=yellow ctermfg=black
+
 
 map <space> /
 map <C-space> ?
