@@ -7,11 +7,11 @@
       '(evil
         evil-collection
         evil-leader
-        doom-modeline
         evil-terminal-cursor-changer
         highlight-indentation
         visual-fill-column
-        vterm))
+        vterm
+        org))
 
 ;; activate all the packages
 (package-initialize)
@@ -61,20 +61,6 @@
 (add-to-list
  'default-frame-alist '(font . "monospace:size=12"))
 
-;; ;; vterm scheme
-;; (custom-set-faces
-;;  '(term-color-black ((t (:foreground "#2a1d17" :background "#4f362b"))))
-;;  '(term-color-red ((t (:foreground "#da1657" :background "#da4375"))))
-;;  '(term-color-green ((t (:foreground "#3ea250" :background "#6cb87a"))))
-;;  '(term-color-yellow ((t (:foreground "#e3d33d" :background "#e3da84"))))
-;;  '(term-color-blue ((t (:foreground "#3ea290" :background "#8ca8a3"))))
-;;  '(term-color-magenta ((t (:foreground "#ff850d" :background "#ffa64f"))))
-;;  '(term-color-cyan ((t (:foreground "#8c16da" :background "#a167c7"))))
-;;  '(term-color-white ((t (:foreground "#e9e9e9" :background "#fdfdfd"))))
-;;  '(term-default-fg-color ((t (:inherit term-color-white))))
-;;  '(term-default-bg-color ((t (:inherit term-color-black))))
-;;  )
-
 ;; evil-mode
 (setq evil-want-keybinding nil)
 (setq evil-want-integration t)
@@ -94,7 +80,6 @@
   "h" 'previous-buffer)
 (setq evil-want-fine-undo 'fine)
 
-;; modeline
 (require 'powerline-evil)
 (powerline-evil-vim-theme)
 (powerline-evil-vim-color-theme)
