@@ -8,28 +8,28 @@ set autoread
 au FocusGained,BufEnter * checktime
 
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 set viminfo="NONE"
 set nobackup
 set nowb
 set noswapfile
-
 set hid
 set history=50
-
-set expandtab
+set ts=4 " tab = n spaces
+set sw=4 " (auto)indent
+set et   " expand tab
 set smarttab
-set shiftwidth=4
-set tabstop=4
-set lbr
 set ai
 set si
+set lbr
 set wrap
-set tw=100
-set cc=-2
+
+set textwidth=100
+set colorcolumn=-2
+hi ColorColumn ctermbg=0
 
 " With a map leader it's possible to do extra key combinations
 let mapleader = ","
@@ -40,8 +40,7 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 set number
 set rnu
 set so=7
-set wildmenu
-
+set wmnu
 set ruler
 set cmdheight=1
 set backspace=eol,start,indent
@@ -50,30 +49,27 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-
 set lazyredraw
 set magic
 set showmatch
 set mat=4
-
 set noerrorbells
 set novisualbell
-
 set tm=500
 set t_vb=
-
 set t_Co=256
 set background=dark
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+set ls=2
+let g:lightline = { 'colorscheme': 'solarized', }
 
-hi Normal ctermbg=none
-hi Visual ctermbg=white ctermfg=black
-hi Search ctermbg=yellow ctermfg=black
+hi Visual ctermbg=white ctermfg=0
+hi Search ctermbg=5 ctermfg=0
 
+" Set IBeam shape in insert mode, underline shape in replace mode and block shape in normal mode.
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 map <space> /
 map <C-space> ?
@@ -141,7 +137,6 @@ vmap <S-k> :m'<-2<cr>`>my`<mzgv`yo`z
 xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
 
 " Don't close window, when deleting a buffer
 command! Bclose call <SID>BufcloseCloseIt()

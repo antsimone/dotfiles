@@ -8,10 +8,13 @@
         evil-collection
         evil-leader
         evil-terminal-cursor-changer
+	    powerline-evil
         highlight-indentation
         visual-fill-column
         vterm
-        org))
+        org
+        org-evil
+        org-bullets))
 
 ;; activate all the packages
 (package-initialize)
@@ -80,9 +83,13 @@
   "h" 'previous-buffer)
 (setq evil-want-fine-undo 'fine)
 
-(require 'powerline-evil)
-(powerline-evil-vim-theme)
+;; modeline
 (powerline-evil-vim-color-theme)
+
+;; custom state cursor
+(setq evil-insert-state-cursor '(bar "#00FF00")
+      evil-visual-state-cursor '(box "#FF00FF")
+      evil-normal-state-cursor '(box "#E2E8EF"))
 
 ;; tabs and spaces
 (setq-default tab-width 4)
@@ -106,30 +113,16 @@
       vhdl-upper-case-attributes t
       vhdl-upper-case-enum-values t)
 
-;; customization for Verilog mode
-(setq verilog-indent-level 4
-      verilog-indent-level-module 4
-      verilog-indent-level-declaration 4
-      verilog-indent-level-behavioral 4
-      verilog-indent-level-directive 1
-      verilog-case-indent 2
-      verilog-auto-newline t
-      verilog-auto-indent-on-newline t
-      verilog-tab-always-indent t
-      verilog-auto-endcomments t
-      verilog-highlight-grouping-keywords t
-      verilog-highlight-modules t
-      verilog-minimum-comment-distance 40
-      verilog-indent-begin-after-if t
-      verilog-auto-lineup '(all))
-
 ;; hook
+(add-hook 'org-mode-hook
+          (lambda () (evil-org-mode t)))
+;;(add-hook 'vterm-mode-hook 'evil-emacs-state)
 (add-hook 'vterm-mode-hook
           (lambda () (display-line-numbers-mode -1)))
 (add-hook 'python-mode-hook
           (lambda () (highlight-indentation-mode t)))
+
 ;; (dolist (hook '( *-mode-hook ...
 ;;                 ))
 ;;   (add-hook hook
 ;;             (lambda () ( )))
-
