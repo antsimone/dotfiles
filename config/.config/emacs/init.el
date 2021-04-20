@@ -8,7 +8,10 @@
         evil-collection
         evil-leader
         evil-terminal-cursor-changer
+        powerline
 	    powerline-evil
+        airline-themes
+        modus-themes
         highlight-indentation
         visual-fill-column
         vterm
@@ -42,6 +45,7 @@
  'default-frame-alist
  '(buffer-predicate . (lambda (buf)
                         (not (string-match-p "^*" (buffer-name buf))))))
+(add-to-list 'default-frame-alist '(background-color . "#000000"))
 
 ;; appearance
 (scroll-bar-mode -1)
@@ -55,10 +59,11 @@
 (display-time)
 (display-battery-mode)
 
+(setq-default fill-column 100)
 ;;(global-visual-fill-column-mode)
 ;;(global-hl-line-mode t)
 ;;(set-face-background 'hl-line "#2b2b2b") ;
-(set-face-attribute 'region nil :background "#ffffff" :foreground "#000000")
+;;(set-face-attribute 'region nil :background "#ffffff" :foreground "#000000")
 
 ;; fonts for emacsclient
 (add-to-list
@@ -83,13 +88,15 @@
   "h" 'previous-buffer)
 (setq evil-want-fine-undo 'fine)
 
-;; modeline
 (powerline-evil-vim-color-theme)
+;;(load-theme 'modus-vivendi t)
+;;(require 'airline-themes)
+;;(load-theme 'airline-lucius t)
 
 ;; custom state cursor
-(setq evil-insert-state-cursor '(bar "#00FF00")
-      evil-visual-state-cursor '(box "#FF00FF")
-      evil-normal-state-cursor '(box "#E2E8EF"))
+;; (setq evil-insert-state-cursor '(bar "#00FF00")
+;;       evil-visual-state-cursor '(box "#FF00FF")
+;;       evil-normal-state-cursor '(box "#E2E8EF"))
 
 ;; tabs and spaces
 (setq-default tab-width 4)
@@ -116,6 +123,8 @@
 ;; hook
 (add-hook 'org-mode-hook
           (lambda () (evil-org-mode t)))
+(add-hook 'org-mode-hook
+          (lambda () (org-bullets-mode t)))
 ;;(add-hook 'vterm-mode-hook 'evil-emacs-state)
 (add-hook 'vterm-mode-hook
           (lambda () (display-line-numbers-mode -1)))

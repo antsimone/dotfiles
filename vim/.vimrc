@@ -1,16 +1,17 @@
-syntax enable
-
-filetype plugin on
-filetype indent on
-
 " Set to auto read when a file is changed from the outside
 set autoread
 au FocusGained,BufEnter * checktime
 
+filetype indent on
+filetype plugin on
+
 call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+
+syntax enable
 
 set viminfo="NONE"
 set nobackup
@@ -29,7 +30,6 @@ set wrap
 
 set textwidth=100
 set colorcolumn=-2
-hi ColorColumn ctermbg=0
 
 " With a map leader it's possible to do extra key combinations
 let mapleader = ","
@@ -42,7 +42,6 @@ set rnu
 set so=7
 set wmnu
 set ruler
-set cmdheight=1
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 set ignorecase
@@ -57,14 +56,21 @@ set noerrorbells
 set novisualbell
 set tm=500
 set t_vb=
+
 set t_Co=256
-set background=dark
+colorscheme ron
 
 set ls=2
-let g:lightline = { 'colorscheme': 'solarized', }
 
-hi Visual ctermbg=white ctermfg=0
-hi Search ctermbg=5 ctermfg=0
+let g:airline_theme = 'luna'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+hi ColorColumn ctermbg=black
+hi Search ctermbg=yellow ctermfg=black
+hi Visual ctermbg=white ctermfg=black
 
 " Set IBeam shape in insert mode, underline shape in replace mode and block shape in normal mode.
 let &t_SI = "\<Esc>[6 q"
