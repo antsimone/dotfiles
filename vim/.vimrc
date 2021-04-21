@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 
 syntax enable
@@ -62,7 +63,7 @@ colorscheme ron
 
 set ls=2
 
-let g:airline_theme = 'luna'
+let g:airline_theme = 'apprentice'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -166,3 +167,6 @@ function! <SID>BufcloseCloseIt()
 
 endfunction
 
+let g:livepreview_engine = 'pdflatex'
+let g:livepreview_previewer = 'zathura'
+let g:livepreview_cursorhold_recompile = 0
