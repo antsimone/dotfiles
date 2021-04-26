@@ -12,6 +12,9 @@
         evil-terminal-cursor-changer
         powerline-evil
         vterm
+        alect-themes
+        solarized-theme
+        doom-themes
         org
         org-bullets
         highlight-indentation))
@@ -129,5 +132,10 @@
 
 ;;; Theme
 
-(load-theme 'my-szgr t)
-(powerline-evil-vim-color-theme)
+;;(load-theme 'alect-light t)
+;;(eval-after-load 'alect-themes
+;;  '(progn
+;;     (alect-set-color 'light 'red-2 "red3")))
+
+(load-theme 'doom-zenburn t)
+(add-to-list 'default-frame-alist '(background-color . "#121212"))
