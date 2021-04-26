@@ -10,10 +10,10 @@
         evil-collection
         evil-leader
         evil-terminal-cursor-changer
+        powerline-evil
         vterm
         org
         org-bullets
-;;        sunny-day-theme
         highlight-indentation))
 
 ;; activate all the packages
@@ -42,6 +42,7 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (global-display-line-numbers-mode)
+(global-display-fill-column-indicator-mode)
 (setq display-line-numbers-type 'relative)
 (setq column-number-mode t)
 
@@ -51,24 +52,22 @@
 (set-window-margins nil 0)
 
 (add-to-list
-  'default-frame-alist '(font . "monospace:pixelsize=12"))
-
-;;(set-face-italic-p 'italic nil)
+ 'default-frame-alist '(font . "monospace:pixelsize=12"))
 
 ;;; Utils
 
 ;; cycle through buffers whose name does not start with an asterisk
 ;; default-frame-alist fix emacsclient
 (add-to-list
-  'default-frame-alist
-  '(buffer-predicate . (lambda (buf)
-                         (not (string-match-p "^*" (buffer-name buf))))))
+ 'default-frame-alist
+ '(buffer-predicate . (lambda (buf)
+                        (not (string-match-p "^*" (buffer-name buf))))))
 
 ;; tabs and spaces
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
-; Backups, symlink and prompt
+                                        ; Backups, symlink and prompt
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq auto-save-list-file-prefix nil)
@@ -103,8 +102,8 @@
 ;;; Octave-mode
 
 (add-to-list
-  'auto-mode-alist
-  '("\\.m$" . octave-mode))
+ 'auto-mode-alist
+ '("\\.m$" . octave-mode))
 
 ;;; VHDL mode
 
@@ -130,4 +129,5 @@
 
 ;;; Theme
 
-(load-theme 'professional-nc t)
+(load-theme 'my-szgr t)
+(powerline-evil-vim-color-theme)
