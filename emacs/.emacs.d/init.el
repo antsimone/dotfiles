@@ -13,7 +13,6 @@
         powerline-evil
         vterm
         alect-themes
-        solarized-theme
         doom-themes
         org
         org-bullets
@@ -45,7 +44,7 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (global-display-line-numbers-mode)
-(global-display-fill-column-indicator-mode)
+;;(global-display-fill-column-indicator-mode)
 (setq display-line-numbers-type 'relative)
 (setq column-number-mode t)
 
@@ -96,6 +95,7 @@
   "s" 'split-window-below
   "TAB" 'switch-to-buffer
   "b" 'list-buffers
+  "k" 'kill-buffer
   "c" 'kill-buffer-and-window
   "q" 'delete-window
   "l" 'next-buffer
@@ -131,14 +131,18 @@
 
 (setq org-log-done t)
 
-;;; Theme
+;;; Themes
 
-(load-theme 'sophia-dark t)
 
+;;(load-theme 'doom-vibrant t)
 ;;(load-theme 'alect-light t)
-;;(eval-after-load 'alect-themes
-;;  '(progn
-;;     (alect-set-color 'light 'red-2 "red3")))
+(load-theme 'doom-vibrant t)
+(setq
+ alect-overriding-faces
+ '((alect-prompt           ((t :foreground blue :weight bold)))
+   (font-lock-string-face  ((t :foreground green-1)))
+   (font-lock-doc-face     ((t :inherit font-lock-string-face)))
+   (font-lock-comment-face ((t :foreground gray)))))
 
-;;(load-theme 'doom-zenburn t)
-;;(add-to-list 'default-frame-alist '(background-color . "#121212"))
+(add-to-list 'default-frame-alist '(background-color . "black"))
+(set-face-attribute 'default nil :font "Iosevka" :height 160)
