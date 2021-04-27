@@ -96,7 +96,8 @@
   "s" 'split-window-below
   "TAB" 'switch-to-buffer
   "b" 'list-buffers
-  "k" 'kill-buffer-and-window
+  "c" 'kill-buffer-and-window
+  "q" 'delete-window
   "l" 'next-buffer
   "h" 'previous-buffer)
 
@@ -132,10 +133,12 @@
 
 ;;; Theme
 
+(load-theme 'sophia-dark t)
+
 ;;(load-theme 'alect-light t)
 ;;(eval-after-load 'alect-themes
 ;;  '(progn
 ;;     (alect-set-color 'light 'red-2 "red3")))
 
-(load-theme 'doom-zenburn t)
-(add-to-list 'default-frame-alist '(background-color . "#121212"))
+;;(load-theme 'doom-zenburn t)
+;;(add-to-list 'default-frame-alist '(background-color . "#121212"))
