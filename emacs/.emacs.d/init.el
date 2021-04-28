@@ -133,10 +133,8 @@
 
 ;;; Themes
 
+(load-theme 'alect-light t)
 
-;;(load-theme 'doom-vibrant t)
-;;(load-theme 'alect-light t)
-(load-theme 'doom-vibrant t)
 (setq
  alect-overriding-faces
  '((alect-prompt           ((t :foreground blue :weight bold)))
@@ -144,5 +142,5 @@
    (font-lock-doc-face     ((t :inherit font-lock-string-face)))
    (font-lock-comment-face ((t :foreground gray)))))
 
-(add-to-list 'default-frame-alist '(background-color . "black"))
-(set-face-attribute 'default nil :font "Iosevka" :height 160)
+;;(load-theme 'doom-vibrant t)
+;;(add-to-list 'default-frame-alist '(background-color . "#121212"))
