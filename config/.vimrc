@@ -56,11 +56,10 @@ set showmatch
 set mat=4
 set noerrorbells
 set novisualbell
-set tm=500
 set t_vb=
-
 set t_Co=256
 colorscheme tempus_classic
+"ron
 
 set ls=2
 
@@ -71,6 +70,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 hi ColorColumn ctermbg=black
+hi Comment ctermfg=magenta
 hi Search ctermbg=yellow ctermfg=black
 hi Visual ctermbg=white ctermfg=black
 
