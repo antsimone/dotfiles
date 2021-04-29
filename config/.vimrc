@@ -10,6 +10,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'protesilaos/tempus-themes-vim'
 call plug#end()
 
 syntax enable
@@ -59,7 +60,7 @@ set tm=500
 set t_vb=
 
 set t_Co=256
-colorscheme ron
+colorscheme tempus_classic
 
 set ls=2
 

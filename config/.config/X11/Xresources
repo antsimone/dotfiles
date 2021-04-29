@@ -1,57 +1,62 @@
-URxvt*font: xft:monospace:size=10
+URxvt*font:                   xft:monospace:pixelsize=11
+URxvt*loginShell:             false
+URxvt*scrollBar:              false
+URxvt*transparent:            false
+URxvt*shading:                20
+URxvt*saveLines:              32767
+URxvt.iso14755:               false
+URxvt.iso14755_2:             false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
 !-- Xft settings -- !
-Xft.dpi          : 96
-Xft.antialias    : true
-Xft.rgba         : rgb
-Xft.hinting      : true
-Xft.hintstyle    : hintfull
-URxvt*loginShell : false
-URxvt*scrollBar  : false
 
-URxvt*transparent : false
-URxvt*shading     : 20
+Xft.dpi:       96
+Xft.antialias: true
+Xft.rgba:      rgb
+Xft.hinting:   true
+Xft.hintstyle: hintfull
 
-URxvt*saveLines :   32767
+!-- Colors -- !
 
-URxvt.iso14755   : false
-URxvt.iso14755_2 : false
-
-URxvt.keysym.Shift-Control-V : eval:paste_clipboard
-URxvt.keysym.Shift-Control-C : eval:selection_to_clipboard
-
-! Gruvbox hard
 *background: #121212
 *foreground: #ebdbb2
 
-! Black + DarkGrey
-*color0  : #282828
-*color8  : #928374
+! Tempus
+! Dark theme with warm hues (WCAG AA compliant) [https://protesilaos.com]
 
-! DarkRed + Red
-*color1  : #cc241d
-*color9  : #fb4934
+*color0:  #232323
+*color1:  #d2813d
+*color2:  #8c9e3d
+*color3:  #b1942b
+*color4:  #6e9cb0
+*color5:  #b58d88
+*color6:  #6da280
+*color7:  #949d9f
+*color8:  #312e30
+*color9:  #d0913d
+*color10: #96a42d
+*color11: #a8a030
+*color12: #8e9cc0
+*color13: #d58888
+*color14: #7aa880
+*color15: #aeadaf
 
-! DarkGreen + Green
-*color2  : #98971a
-*color10 : #b8bb26
-
-! DarkYellow + Yellow
-*color3  : #d79921
-*color11 : #fabd2f
-
-! DarkBlue + Blue
-*color4  : #458588
-*color12 : #83a598
-
-! DarkMagenta + Magenta
-*color5  : #b16286
-*color13 : #d3869b
-
-! DarkCyan + Cyan
-*color6  : #689d6a
-*color14 : #8ec07c
-
-! LightGrey + White
-*color7  : #a89984
-*color15 : #ebdbb2
-
+! Gruvbox
+!*color0  : #282828
+!*color8  : #928374
+!*color1  : #cc241d
+!*color9  : #fb4934
+!*color2  : #98971a
+!*color10 : #b8bb26
+!*color3  : #d79921
+!*color11 : #fabd2f
+!*color4  : #458588
+!*color12 : #83a598
+!*color5  : #b16286
+!*color13 : #d3869b
+!*color6  : #689d6a
+!*color14 : #8ec07c
+!*color7  : #a89984
+!*color15 : #ebdbb2
+!
