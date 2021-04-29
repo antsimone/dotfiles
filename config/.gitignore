@@ -1,7 +1,5 @@
 */pulse
 */dconf
 */htop
-*/leafpad
-*/emacs/elpa
-*/emacs/custom*
-
+*/plugged
+*/.netrwhist
