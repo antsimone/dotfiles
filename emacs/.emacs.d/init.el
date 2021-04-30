@@ -133,8 +133,8 @@
 ;;; Themes
 
 ;;(load-theme 'doom-vibrant t) 
-;; match tempus classic
-(load-theme 'doom-nord t) 
+(load-theme 'doom-spacegray t)
+
 (add-to-list
  'initial-frame-alist '(background-color . "#000000"))
 (add-to-list                                 
