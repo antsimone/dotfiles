@@ -7,10 +7,9 @@ filetype plugin on
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-easy-align'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'protesilaos/tempus-themes-vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 syntax enable
@@ -36,7 +35,6 @@ set colorcolumn=-2
 " With a map leader it's possible to do extra key combinations
 let mapleader = ","
 
-nmap <leader>w :w!<cr>
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
 set number
@@ -58,30 +56,38 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set t_Co=256
-colorscheme tempus_classic
-"ron
 
-set ls=2
 
-let g:airline_theme = 'apprentice'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-
-hi ColorColumn ctermbg=black
-hi Comment ctermfg=magenta
-hi Search ctermbg=yellow ctermfg=black
-hi Visual ctermbg=white ctermfg=black
+colorscheme spaceway
+"colorscheme tempus_classic
+"colorscheme ron
+"
+"hi LineNr ctermbg=none
+"hi ColorColumn ctermbg=black
+"hi Comment ctermfg=gray
+"hi Search ctermbg=yellow ctermfg=black
+"hi Visual ctermbg=white ctermfg=black
 
 " Set IBeam shape in insert mode, underline shape in replace mode and block shape in normal mode.
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
+set ls=2
+
+"let g:airline_theme = 'apprentice'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
 map <space> /
 map <C-space> ?
 map 0 ^
+
+nmap <leader>w :w!<cr>
+" Quickly list buffers
+nmap <leader>. :ls<cr>
 
 " Quickly open a buffer for scribble
 map <leader>q :e ~/buffer<cr>
@@ -104,7 +110,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Close the current buffer
-map <leader>bd :Bclose<cr>:tabclose<cr>gT
+map <leader>bd :Bclose<cr>gT
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
 " Move between buffers
@@ -171,3 +177,6 @@ endfunction
 let g:livepreview_engine = 'pdflatex'
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_cursorhold_recompile = 0
+let g:lightline = {
+          \ 'colorscheme': 'apprentice',
+      \ }

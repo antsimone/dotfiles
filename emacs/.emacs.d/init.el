@@ -3,7 +3,6 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
-
 ;; list the packages TODO refactor use-package
 (setq package-list
       '(evil
@@ -133,12 +132,13 @@
 
 ;;; Themes
 
+;;(load-theme 'doom-vibrant t) 
 ;; match tempus classic
 (load-theme 'doom-nord t) 
 (add-to-list
- 'initial-frame-alist '(background-color . "#121212"))
-(add-to-list
- 'default-frame-alist '(background-color . "#121212"))
+ 'initial-frame-alist '(background-color . "#000000"))
+(add-to-list                                 
+ 'default-frame-alist '(background-color . "#000000"))
 
 (setq themes '(alect-light doom-vibrant))
 (setq themes-index 0)
