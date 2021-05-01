@@ -1,0 +1,13 @@
+#!/bin/sh
+
+wifi () {
+
+    case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in
+        down) w="" ;;
+        up) w="W" ;;
+    esac
+    echo "$w"
+
+}
+
+wifi

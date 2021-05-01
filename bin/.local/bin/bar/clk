@@ -3,5 +3,4 @@
 clk () {
     echo "$(date '+%a %d %b %I:%M%p')"
 }
-
 clk

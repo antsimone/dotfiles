@@ -1,6 +1,6 @@
 # .bash_profile only sourced when bash is started as a login shell
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.local/bin/bar"
 
 # xdg base dir
 export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
