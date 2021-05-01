@@ -59,14 +59,8 @@ set t_Co=256
 
 
 colorscheme spaceway
-"colorscheme tempus_classic
-"colorscheme ron
-"
-"hi LineNr ctermbg=none
-"hi ColorColumn ctermbg=black
-"hi Comment ctermfg=gray
-"hi Search ctermbg=yellow ctermfg=black
-"hi Visual ctermbg=white ctermfg=black
+
+hi ColorColumn ctermbg=black
 
 " Set IBeam shape in insert mode, underline shape in replace mode and block shape in normal mode.
 let &t_SI = "\<Esc>[6 q"

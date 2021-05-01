@@ -1,4 +1,6 @@
-URxvt*font:                   xft:monospace:pixelsize=11
+!-- Xresources -- !
+
+URxvt*font:                   xft:monospace:pixelsize=12
 URxvt*loginShell:             false
 URxvt*scrollBar:              false
 URxvt*transparent:            false
@@ -7,9 +9,9 @@ URxvt*saveLines:              32767
 URxvt.iso14755:               false
 URxvt.iso14755_2:             false
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 !-- Xft settings -- !
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 Xft.dpi:       96
 Xft.antialias: true
@@ -20,12 +22,10 @@ Xft.hintstyle: hintfull
 !-- Colors -- !
 
 *background: #000000
-!*background: #121212
 *foreground: #aeadaf
 
 ! Tempus
 ! Dark theme with warm hues (WCAG AA compliant) [https://protesilaos.com]
-
 *color0:  #232323
 *color1:  #d2813d
 *color2:  #8c9e3d
@@ -34,7 +34,6 @@ Xft.hintstyle: hintfull
 *color5:  #b58d88
 *color6:  #6da280
 *color7:  #d7d7d7
-!#aeadaf
 *color8:  #312e30
 *color9:  #d0913d
 *color10: #96a42d
@@ -43,6 +42,8 @@ Xft.hintstyle: hintfull
 *color13: #d58888
 *color14: #7aa880
 *color15: #ffffff
+
+!*color7:  #aeadaf
 !*color15: #d4d4d4
 
 ! Gruvbox

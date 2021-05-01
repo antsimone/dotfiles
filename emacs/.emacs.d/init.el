@@ -53,7 +53,7 @@
 (set-window-margins nil 0)
 
 (add-to-list
- 'default-frame-alist '(font . "monospace:pixelsize=12"))
+ 'default-frame-alist '(font . "Monospace-9"))
 
 ;;; Utils
 
@@ -132,13 +132,13 @@
 
 ;;; Themes
 
-;;(load-theme 'doom-vibrant t) 
-(load-theme 'doom-spacegray t)
+;;(load-theme 'doom-vibrant t)
+(load-theme 'doom-spacegrey t)
 
 (add-to-list
- 'initial-frame-alist '(background-color . "#000000"))
-(add-to-list                                 
- 'default-frame-alist '(background-color . "#000000"))
+ 'initial-frame-alist '(background-color . "#121212"))
+(add-to-list
+ 'default-frame-alist '(background-color . "#121212"))
 
 (setq themes '(alect-light doom-vibrant))
 (setq themes-index 0)
