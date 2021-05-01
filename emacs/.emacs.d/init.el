@@ -15,6 +15,7 @@
         magit
         doom-themes
         alect-themes
+        modus-themes
         highlight-indentation))
 
 ;; activate all the packages
@@ -132,8 +133,7 @@
 
 ;;; Themes
 
-;;(load-theme 'doom-vibrant t)
-(load-theme 'doom-spacegrey t)
+(load-theme 'modus-vivendi t)
 
 (add-to-list
  'initial-frame-alist '(background-color . "#121212"))

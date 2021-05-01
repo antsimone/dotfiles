@@ -1,15 +1,15 @@
 " Set to auto read when a file is changed from the outside
 set autoread
 au FocusGained,BufEnter * checktime
-
 filetype indent on
 filetype plugin on
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-Plug 'protesilaos/tempus-themes-vim'
-Plug 'itchyny/lightline.vim'
+Plug 'arzg/vim-colors-xcode'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 syntax enable
@@ -56,10 +56,10 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set t_Co=256
+set laststatus=2 "show statusbar
 
-
-colorscheme spaceway
-
+colorscheme xcodedark
+hi Normal ctermbg=NONE
 hi ColorColumn ctermbg=black
 
 " Set IBeam shape in insert mode, underline shape in replace mode and block shape in normal mode.
@@ -67,13 +67,19 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
-set ls=2
+"let g:lightline = {
+"          \ 'colorscheme': 'selenized_black',
+"      \ }
 
-"let g:airline_theme = 'apprentice'
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
-"let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_theme = 'minimalist'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+let g:livepreview_engine = 'pdflatex'
+let g:livepreview_previewer = 'zathura'
+let g:livepreview_cursorhold_recompile = 0
 
 map <space> /
 map <C-space> ?
@@ -167,10 +173,3 @@ function! <SID>BufcloseCloseIt()
     endif
 
 endfunction
-
-let g:livepreview_engine = 'pdflatex'
-let g:livepreview_previewer = 'zathura'
-let g:livepreview_cursorhold_recompile = 0
-let g:lightline = {
-          \ 'colorscheme': 'apprentice',
-      \ }
