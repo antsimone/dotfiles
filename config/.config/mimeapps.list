@@ -2,6 +2,7 @@
 text/x-csrc=emacs.desktop;
 text/x-python=emacs.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-RHDUW0.desktop
+image/png=sxiv.desktop
 
 [Added Associations]
 text/x-csrc=emacs.desktop;
@@ -17,3 +18,4 @@ image/svg+xml=sxiv.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-RHDUW0.desktop;
 text/xml=firefox.desktop;
 image/jpeg=sxiv.desktop;
+image/png=sxiv.desktop;
