@@ -10,6 +10,7 @@ Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'arzg/vim-colors-xcode'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 syntax enable
@@ -33,7 +34,7 @@ set textwidth=100
 set colorcolumn=-2
 
 " With a map leader it's possible to do extra key combinations
-let mapleader = ","
+let mapleader = "\<space>"
 
 command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 
@@ -59,7 +60,9 @@ set t_Co=256
 set laststatus=2 "show statusbar
 
 colorscheme xcodedark
-hi Normal ctermbg=NONE
+hi Search ctermbg=26 ctermfg=254
+hi Normal ctermbg=none
+hi EndOfBuffer ctermbg=none
 hi ColorColumn ctermbg=black
 
 " Set IBeam shape in insert mode, underline shape in replace mode and block shape in normal mode.
@@ -81,8 +84,8 @@ let g:livepreview_engine = 'pdflatex'
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_cursorhold_recompile = 0
 
-map <space> /
-map <C-space> ?
+"map <space> /
+"map <C-space> ?
 map 0 ^
 
 nmap <leader>w :w!<cr>

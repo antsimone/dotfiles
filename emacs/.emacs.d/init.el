@@ -87,7 +87,7 @@
 (evil-mode t)
 (setq evil-collection-setup-minibuffer t)
 (evil-collection-init)
-(evil-leader/set-leader ",")
+(evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
   "w" 'save-buffer
   "e" 'find-file
@@ -130,17 +130,18 @@
 ;;; Org
 
 (setq org-log-done t)
+(setq org-indent-mode t)
 
 ;;; Themes
 
 (load-theme 'modus-vivendi t)
 
-(add-to-list
- 'initial-frame-alist '(background-color . "#121212"))
-(add-to-list
- 'default-frame-alist '(background-color . "#121212"))
+;;(add-to-list
+;; 'initial-frame-alist '(background-color . "#121212"))
+;;(add-to-list
+;; 'default-frame-alist '(background-color . "#121212"))
 
-(setq themes '(alect-light doom-vibrant))
+(setq themes '(modus-vivendi modus-operandi))
 (setq themes-index 0)
 
 (defun cycle-theme ()
@@ -155,3 +156,15 @@
   (if (ignore-errors (load-theme theme :no-confirm))
       (mapcar #'disable-theme (remove theme custom-enabled-themes))
     (message "Unable to find theme file for ‘%s’" theme)))
+
+(global-set-key [f2] 'vterm-toggle)
+(global-set-key [C-f2] 'vterm-toggle-cd)
+
+;; you can cd to the directory where your previous buffer file exists
+;; after you have toggle to the vterm buffer with `vterm-toggle'.
+(define-key vterm-mode-map [(control return)]   #'vterm-toggle-insert-cd)
+
+;Switch to next vterm buffer
+(define-key vterm-mode-map (kbd "s-n")   'vterm-toggle-forward)
+;Switch to previous vterm buffer
+(define-key vterm-mode-map (kbd "s-p")   'vterm-toggle-backward)
