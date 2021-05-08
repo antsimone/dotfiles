@@ -135,7 +135,6 @@
 ;;; Themes
 
 (load-theme 'modus-vivendi t)
-
 ;;(add-to-list
 ;; 'initial-frame-alist '(background-color . "#121212"))
 ;;(add-to-list
