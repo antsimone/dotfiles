@@ -3,6 +3,7 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
+
 ;; list the packages TODO refactor use-package
 (setq package-list
       '(evil
@@ -10,16 +11,13 @@
         evil-leader
         evil-terminal-cursor-changer
         org-bullets
-        org-beautify-theme
         vterm
-        magit
+        helm
+        undo-tree
         doom-themes
-        alect-themes
-        modus-themes
         highlight-indentation))
 
 ;; activate all the packages
-
 (package-initialize)
 
 ;; fetch the list of available packages
@@ -31,7 +29,7 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-;;; Custom ld
+;;; Custom load
 
 (setq custom-file (concat user-emacs-directory "/custom.el"))
 (when (file-exists-p custom-file)
@@ -44,7 +42,7 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (global-display-line-numbers-mode)
-;;(global-display-fill-column-indicator-mode)
+
 (setq display-line-numbers-type 'relative)
 (setq column-number-mode t)
 
@@ -54,7 +52,7 @@
 (set-window-margins nil 0)
 
 (add-to-list
- 'default-frame-alist '(font . "Monospace-9"))
+ 'default-frame-alist '(font . "Monospace-11"))
 
 ;;; Utils
 
@@ -65,11 +63,11 @@
  '(buffer-predicate . (lambda (buf)
                         (not (string-match-p "^*" (buffer-name buf))))))
 
-;; tabs and spaces
+;; Tabs and spaces
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
-                                        ; Backups, symlink and prompt
+;; Backups, symlink and prompt
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (setq auto-save-list-file-prefix nil)
@@ -77,7 +75,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; fill-paragraph
-(setq-default fill-column 100)
+(setq-default fill-column 80)
 
 ;;; Evil
 
@@ -102,6 +100,10 @@
   "h" 'previous-buffer)
 
 (setq evil-want-fine-undo 'fine)
+
+;; Undo-redo
+(global-undo-tree-mode)
+(evil-set-undo-system 'undo-tree)
 
 ;;; Octave-mode
 
@@ -134,11 +136,11 @@
 
 ;;; Themes
 
-(load-theme 'modus-vivendi t)
-;;(add-to-list
-;; 'initial-frame-alist '(background-color . "#121212"))
-;;(add-to-list
-;; 'default-frame-alist '(background-color . "#121212"))
+(load-theme 'doom-Iosvkem t)
+(add-to-list
+ 'initial-frame-alist '(background-color . "black"))
+(add-to-list
+ 'default-frame-alist '(background-color . "black"))
 
 (setq themes '(modus-vivendi modus-operandi))
 (setq themes-index 0)
@@ -158,12 +160,10 @@
 
 (global-set-key [f2] 'vterm-toggle)
 (global-set-key [C-f2] 'vterm-toggle-cd)
-
 ;; you can cd to the directory where your previous buffer file exists
 ;; after you have toggle to the vterm buffer with `vterm-toggle'.
-(define-key vterm-mode-map [(control return)]   #'vterm-toggle-insert-cd)
-
-;Switch to next vterm buffer
-(define-key vterm-mode-map (kbd "s-n")   'vterm-toggle-forward)
-;Switch to previous vterm buffer
-(define-key vterm-mode-map (kbd "s-p")   'vterm-toggle-backward)
+;;(define-key vterm-mode-map []   #'vterm-toggle-insert-cd)
+;;;Switch to next vterm buffer
+;;(define-key vterm-mode-map (kbd "s-n")   'vterm-toggle-forward)
+;;;Switch to previous vterm buffer
+;;(define-key vterm-mode-map (kbd "s-p")   'vterm-toggle-backward)
