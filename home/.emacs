@@ -5,13 +5,13 @@
              '("melpa" . "https://melpa.org/packages/") t)
 
 ;; list the packages TODO refactor use-package
+
 (setq package-list
       '(evil
         evil-collection
         evil-leader
         evil-terminal-cursor-changer
         org-bullets
-        vterm
         helm
         undo-tree
         doom-themes
@@ -52,7 +52,7 @@
 (set-window-margins nil 0)
 
 (add-to-list
- 'default-frame-alist '(font . "Monospace-11"))
+ 'default-frame-alist '(font . "Monospace-10"))
 
 ;;; Utils
 
@@ -77,6 +77,14 @@
 ;; fill-paragraph
 (setq-default fill-column 80)
 
+;;; Helm
+
+(helm-mode 1)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; open helm buffer inside current window, not occupy whole other window
+(setq helm-split-window-in-side-p t)
+
 ;;; Evil
 
 (setq evil-want-keybinding nil)
@@ -88,7 +96,7 @@
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
   "w" 'save-buffer
-  "e" 'find-file
+  "e" 'helm-find-files
   "v" 'split-window-right
   "s" 'split-window-below
   "TAB" 'switch-to-buffer
@@ -134,7 +142,7 @@
 (setq org-log-done t)
 (setq org-indent-mode t)
 
-;;; Themes
+;;; Theme
 
 (load-theme 'doom-Iosvkem t)
 (add-to-list
@@ -142,24 +150,26 @@
 (add-to-list
  'default-frame-alist '(background-color . "black"))
 
-(setq themes '(modus-vivendi modus-operandi))
-(setq themes-index 0)
+;; Switch between themes, usually get light and dark
 
+(setq themes '(doom-Iosvkem leuven))
+(setq themes-index 0)
 (defun cycle-theme ()
   (interactive)
   (setq themes-index (% (1+ themes-index) (length themes)))
   (load-indexed-theme))
-
 (defun load-indexed-theme ()
   (try-load-theme (nth themes-index themes)))
-
 (defun try-load-theme (theme)
   (if (ignore-errors (load-theme theme :no-confirm))
       (mapcar #'disable-theme (remove theme custom-enabled-themes))
     (message "Unable to find theme file for ‘%s’" theme)))
 
-(global-set-key [f2] 'vterm-toggle)
-(global-set-key [C-f2] 'vterm-toggle-cd)
+
+;;; Vterm (inutile)
+
+;;(global-set-key [f2] 'vterm-toggle)
+;;(global-set-key [C-f2] 'vterm-toggle-cd)
 ;; you can cd to the directory where your previous buffer file exists
 ;; after you have toggle to the vterm buffer with `vterm-toggle'.
 ;;(define-key vterm-mode-map []   #'vterm-toggle-insert-cd)
@@ -167,3 +177,4 @@
 ;;(define-key vterm-mode-map (kbd "s-n")   'vterm-toggle-forward)
 ;;;Switch to previous vterm buffer
 ;;(define-key vterm-mode-map (kbd "s-p")   'vterm-toggle-backward)
+
