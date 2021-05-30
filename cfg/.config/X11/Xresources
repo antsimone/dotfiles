@@ -21,30 +21,30 @@ Xft.hintstyle: hintfull
 
 !-- Colors -- !
 
-!*background: #000000
-!*foreground: #aeadaf
-!
+*background: #000000
+*foreground: #aeadaf
+
 ! Tempus
 ! Dark theme with warm hues (WCAG AA compliant) [https://protesilaos.com]
-!*color0:  #232323
-!*color1:  #d2813d
-!*color2:  #8c9e3d
-!*color3:  #b1942b
-!*color4:  #6e9cb0
-!*color5:  #b58d88
-!*color6:  #6da280
-!*color7:  #d7d7d7
-!*color8:  #312e30
-!*color9:  #d0913d
-!*color10: #96a42d
-!*color11: #a8a030
-!*color12: #8e9cc0
-!*color13: #d58888
-!*color14: #7aa880
-!*color15: #ffffff
-!
-!*color7:  #aeadaf
-!*color15: #d4d4d4
+*color0:  #232323
+*color1:  #d2813d
+*color2:  #8c9e3d
+*color3:  #b1942b
+*color4:  #6e9cb0
+*color5:  #b58d88
+*color6:  #6da280
+*color7:  #d7d7d7
+*color8:  #312e30
+*color9:  #d0913d
+*color10: #96a42d
+*color11: #a8a030
+*color12: #8e9cc0
+*color13: #d58888
+*color14: #7aa880
+*color15: #ffffff
+
+*color7:  #aeadaf
+*color15: #d4d4d4
 
 ! Gruvbox
 !*color0  : #282828
@@ -65,21 +65,21 @@ Xft.hintstyle: hintfull
 !*color15 : #ebdbb2
 
 ! DOS-box colours...
-*foreground: rgb:a8/a8/a8
-*background: rgb:00/00/00
-*color0: rgb:00/00/00
-*color1: rgb:a8/00/00
-*color2: rgb:00/a8/00
-*color3: rgb:a8/54/00
-*color4: rgb:00/00/a8
-*color5: rgb:a8/00/a8
-*color6: rgb:00/a8/a8
-*color7: rgb:a8/a8/a8
-*color8: rgb:54/54/54
-*color9: rgb:fc/54/54
-*color10: rgb:54/fc/54
-*color11: rgb:fc/fc/54
-*color12: rgb:54/54/fc
-*color13: rgb:fc/54/fc
-*color14: rgb:54/fc/fc
-*color15: rgb:fc/fc/fc
+! *foreground: rgb:a8/a8/a8
+! *background: rgb:00/00/00
+! *color0: rgb:00/00/00
+! *color1: rgb:a8/00/00
+! *color2: rgb:00/a8/00
+! *color3: rgb:a8/54/00
+! *color4: rgb:00/00/a8
+! *color5: rgb:a8/00/a8
+! *color6: rgb:00/a8/a8
+! *color7: rgb:a8/a8/a8
+! *color8: rgb:54/54/54
+! *color9: rgb:fc/54/54
+! *color10: rgb:54/fc/54
+! *color11: rgb:fc/fc/54
+! *color12: rgb:54/54/fc
+! *color13: rgb:fc/54/fc
+! *color14: rgb:54/fc/fc
+! *color15: rgb:fc/fc/fc

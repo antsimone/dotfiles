@@ -11,7 +11,6 @@
         evil-collection
         evil-leader
         evil-terminal-cursor-changer
-        org-bullets
         helm
         undo-tree
         doom-themes
@@ -52,7 +51,7 @@
 (set-window-margins nil 0)
 
 (add-to-list
- 'default-frame-alist '(font . "Monospace-10"))
+ 'default-frame-alist '(font . "Monospace-9"))
 
 ;;; Utils
 
@@ -93,19 +92,20 @@
 (evil-mode t)
 (setq evil-collection-setup-minibuffer t)
 (evil-collection-init)
+
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
   "w" 'save-buffer
   "e" 'helm-find-files
   "v" 'split-window-right
   "s" 'split-window-below
-  "TAB" 'switch-to-buffer
-  "b" 'list-buffers
+  "b" 'helm-buffers-list
   "k" 'kill-buffer
   "c" 'kill-buffer-and-window
   "q" 'delete-window
   "l" 'next-buffer
-  "h" 'previous-buffer)
+  "h" 'previous-buffer
+  "TAB" 'switch-to-buffer)
 
 (setq evil-want-fine-undo 'fine)
 
@@ -130,8 +130,6 @@
 
 ;;; Hooks
 
-(add-hook 'org-mode-hook
-          (lambda () (org-bullets-mode t)))
 (add-hook 'vterm-mode-hook
           (lambda () (display-line-numbers-mode -1)))
 (add-hook 'python-mode-hook
@@ -150,31 +148,28 @@
 (add-to-list
  'default-frame-alist '(background-color . "black"))
 
-;; Switch between themes, usually get light and dark
+;; Switch between themes
 
 (setq themes '(doom-Iosvkem leuven))
 (setq themes-index 0)
+
 (defun cycle-theme ()
   (interactive)
   (setq themes-index (% (1+ themes-index) (length themes)))
   (load-indexed-theme))
+
 (defun load-indexed-theme ()
   (try-load-theme (nth themes-index themes)))
+
 (defun try-load-theme (theme)
   (if (ignore-errors (load-theme theme :no-confirm))
       (mapcar #'disable-theme (remove theme custom-enabled-themes))
     (message "Unable to find theme file for ‘%s’" theme)))
 
 
-;;; Vterm (inutile)
-
-;;(global-set-key [f2] 'vterm-toggle)
-;;(global-set-key [C-f2] 'vterm-toggle-cd)
-;; you can cd to the directory where your previous buffer file exists
-;; after you have toggle to the vterm buffer with `vterm-toggle'.
-;;(define-key vterm-mode-map []   #'vterm-toggle-insert-cd)
-;;;Switch to next vterm buffer
-;;(define-key vterm-mode-map (kbd "s-n")   'vterm-toggle-forward)
-;;;Switch to previous vterm buffer
-;;(define-key vterm-mode-map (kbd "s-p")   'vterm-toggle-backward)
-
+;; ;; vterm
+;; (global-set-key [] 'vterm-toggle)
+;; (global-set-key [] 'vterm-toggle-cd)
+;; (define-key vterm-mode-map (kbd "") 'vterm-toggle-insert-cd) 
+;; (define-key vterm-mode-map (kbd "s-n") 'vterm-toggle-forward) ; Switch to next vterm buffer
+;; (define-key vterm-mode-map (kbd "s-p") 'vterm-toggle-backward) ; Switch to previous vterm buffer
